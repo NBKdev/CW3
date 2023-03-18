@@ -5,7 +5,7 @@ export default {
   methods: {
     addLesson(id) {
       console.log("child", id);
-      this.$emit("addLesson", id);
+      this.$emit("addLesson", id); // listening for custom events
     },
   },
 };

@@ -1,11 +1,12 @@
 <script>
-import Lesson from './components/Lesson.vue';
-import Checkout from './components/Checkout.vue';
+import Lesson from './components/Lesson.vue'; // This allows import and register two child components 
+import Checkout from './components/Checkout.vue'; // This allows import and register two child components
 import Swal from 'sweetalert2';
-
+// line 60 lessons=lessons passing props to child components  @addlesson="addLesson is listening for custom events "
+// line 61 shoppingcart="shoppingCart passing props to child components and @remove lesson and @toggle component are both custom events "
 export default ({
   name: "App",
-  components: {Lesson, Checkout},
+  components: {Lesson, Checkout}, // This allows import and register two child components
   data() {
     return {
       lessons: [],
@@ -57,7 +58,7 @@ export default ({
 <template>
   <button class="cart" @click="toggleActiveComponent">Cart Items: {{ shoppingCart.length }}</button>
 
-  <Lesson v-if="activeComponent === 'lesson'" :lessons="lessons" @addLesson="addLesson" />
+  <Lesson v-if="activeComponent === 'lesson'" :lessons="lessons" @addLesson="addLesson" />   
   <Checkout v-if="activeComponent === 'checkout'" :shoppingCart="shoppingCart" @removeLesson="removeLesson" @toggleComponent="toggleActiveComponent" @confirmOrder="confirmOrder" />
 </template>
 
