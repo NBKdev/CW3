@@ -1,3 +1,5 @@
+const API_URL = "https://darius-project.herokuapp.com/api";
+
 const express = require("express");
 var app = express();
 const { MongoClient } = require("mongodb");
